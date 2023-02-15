@@ -2,6 +2,8 @@ import { string } from "prop-types";
 import classNames from "classnames/bind";
 import styles from "./index.module.scss";
 
+import Image from "next/image";
+
 import Button from "../Button";
 import SettingsButton from "../SettingsButton";
 
@@ -29,11 +31,13 @@ export default function Content({
     <div className={cn("wrapper", className)}>
       <div className={cn("header")}>
         <h1 className={cn("title")}>{title}</h1>
-        <SettingsButton />
+        <SettingsButton onDelete={handleDelete} onDuplicate={handleDuplicate} />
       </div>
       <div className={cn("content")}>
         <div className={cn("media")}>
-          {image ? null : (
+          {image ? (
+            <Image src={image} alt="Picture" width={319} height={283} />
+          ) : (
             <svg
               width="319"
               height="283"

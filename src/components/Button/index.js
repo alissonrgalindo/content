@@ -1,4 +1,4 @@
-import { object, string } from "prop-types";
+import { string } from "prop-types";
 import classNames from "classnames/bind";
 import styles from "./index.module.scss";
 
@@ -12,5 +12,5 @@ export default function Button({ className, children }) {
 
 Button.propTypes = {
   className: string,
-  children: object,
+  children: string,
 };
